@@ -84,7 +84,7 @@
           >;
         };layer3 {
           bindings = <
-          &kp ESCAPE KC_TILD KC_LCBR KC_RCBR &kp GRAVE              &kp SEMICOLON &kp LEFT_BRACKET &kp RIGHT_BRACKET KC_LPRN KC_RPRN 
+          &kp ESCAPE KC_TILD KC_LBRC KC_RBRC &kp GRAVE              &kp SEMICOLON &kp LEFT_BRACKET &kp RIGHT_BRACKET KC_LPRN KC_RPRN 
           KC_EXLM KC_AT KC_HASH KC_DLR KC_PERC                      &kp MINUS OSM(MOD_LGUI) OSM(MOD_LALT) OSM(MOD_LSFT) OSM(MOD_LCTL) 
           KC_CIRC KC_AMPR &kp BACKSLASH &kp SLASH KC_PIPE           &kp EQUAL KC_PLUS KC_ASTR KC_QUES KC_EXLM 
           &mo 5 &kp SPACE                                           &kp BACKSPACE &trans
