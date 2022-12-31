@@ -35,9 +35,9 @@
           >;
         };layer3 {
           bindings = <
-          &kp ESCAPE KC_TILD KC_LCBR KC_RCBR &kp GRAVE              &kp SEMICOLON &kp LEFT_BRACKET &kp RIGHT_BRACKET KC_LPRN KC_RPRN 
-          KC_EXLM KC_AT KC_HASH KC_DLR KC_PERC                      &kp MINUS &sk LGUI &sk LALT &sk LSFT &sk LCTL 
-          KC_CIRC KC_AMPR &kp BACKSLASH &kp SLASH KC_PIPE           &kp EQUAL KC_PLUS KC_ASTR KC_QUES KC_EXLM 
+          &kp ESCAPE &kp TILD &kp LCBR &kp RCBR &kp GRAVE              &kp SEMICOLON &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LPRN &kp RPRN 
+          &kp EXLM &kp AT &kp HASH &kp DLR &kp PERC                      &kp MINUS &sk LGUI &sk LALT &sk LSFT &sk LCTL 
+          &kp CIRC &kp AMPR &kp BACKSLASH &kp SLASH &kp PIPE           &kp EQUAL &kp PLUS &kp ASTR &kp QUES &kp EXLM 
           &mo 5 &kp SPACE                                           &kp BACKSPACE &trans
           >;
         };layer4 {
@@ -56,8 +56,8 @@
           >;
         //};layer6 {
         //  bindings = <
-        //  &kp F20 &kp F20 KC_MS_U &kp F20 &kp F20               &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 
-        //  &kp F20 KC_MS_L KC_MS_D KC_MS_R &kp F20               &kp F20 KC_BTN1 KC_BTN3 KC_BTN2 &kp F20 
+        //  &kp F20 &kp F20 &kp MS_U &kp F20 &kp F20               &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 
+        //  &kp F20 &kp MS_L &kp MS_D &kp MS_R &kp F20               &kp F20 &kp BTN1 &kp BTN3 &kp BTN2 &kp F20 
         //  &kp F20 &kp F20 &kp F20 &kp F20 &kp F20               &kp F20 &kp F20 &kp F20 &trans &trans 
         //  &kp F20 &kp F20                                       &kp F20 &kp F20
         //  >;
