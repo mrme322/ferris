@@ -1,64 +1,15 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
+ /*
+  * Copyright (c) 2020 The ZMK Contributors
+  *
+  * SPDX-License-Identifier: MIT
+  */
 
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
+  #include <behaviors.dtsi>
+  #include <dt-bindings/zmk/keys.h>
+  #include <dt-bindings/zmk/bt.h>
+  #include <dt-bindings/zmk/ext_power.h>
 
-
-&mt {
-  //  flavor = "tap-preferred";
-   // tapping_term_ms = <200>;
-};
-
-/ { 
-
-//    combos {
-//        compatible = "zmk,combos";
-//        combo_esc {
-//            timeout-ms = <50>;
-//            key-positions = <0 1>;
-//            bindings = <&kp ESC>;
-//        };
-//        
-//         combo_tab {
-//            timeout-ms = <50>;
-//            key-positions = <10 11>;
-//            bindings = <&kp TAB>;
-//        };
-//        
-//            combo_ralt {
-//            timeout-ms = <50>;
-//            key-positions = <17 16>;
-//            bindings = <&kp RALT>;
-//        };
-//        
-//                    combo_lalt {
-//            timeout-ms = <50>;
-//            key-positions = <11 12>;
-//            bindings = <&kp LALT>;
-//        };
-//        
-//                           combo_lgui {
-//            timeout-ms = <50>;
-//            key-positions = <12 13>;
-//            bindings = <&kp LGUI>;
-//        };
-//        
-//        
-//           combo_rgui {
-//            timeout-ms = <50>;
-//            key-positions = <17 18>;
-//            bindings = <&kp RGUI>;
-//        };
-//        
-//
-//        
-//    };
-
+  / {
     keymap {
       compatible = "zmk,keymap";
   layer0 {
@@ -84,7 +35,7 @@
           >;
         };layer3 {
           bindings = <
-          &kp ESCAPE KC_TILD KC_LBRC KC_RBRC &kp GRAVE              &kp SEMICOLON &kp LEFT_BRACKET &kp RIGHT_BRACKET KC_LPRN KC_RPRN 
+          &kp ESCAPE KC_TILD KC_LCBR KC_RCBR &kp GRAVE              &kp SEMICOLON &kp LEFT_BRACKET &kp RIGHT_BRACKET KC_LPRN KC_RPRN 
           KC_EXLM KC_AT KC_HASH KC_DLR KC_PERC                      &kp MINUS OSM(MOD_LGUI) OSM(MOD_LALT) OSM(MOD_LSFT) OSM(MOD_LCTL) 
           KC_CIRC KC_AMPR &kp BACKSLASH &kp SLASH KC_PIPE           &kp EQUAL KC_PLUS KC_ASTR KC_QUES KC_EXLM 
           &mo 5 &kp SPACE                                           &kp BACKSPACE &trans
@@ -112,5 +63,5 @@
           >;
         };
     };
-
-};
+  };
+  
