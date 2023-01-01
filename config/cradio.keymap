@@ -30,7 +30,7 @@
         };
   layer2 {
           bindings = <
-          &kp ESCAPE &kp TILD &kp LCBR &kp RCBR &kp GRAVE              &kp SEMICOLON &kp LBKT &kp RBKT &kp LPRN &kp RPRN 
+          &kp ESCAPE &kp TILD &kp LCBR &kp RCBR &kp GRAVE              &kp SEMICOLON &trans &trans &kp LPRN &kp RPRN 
           &kp EXLM &kp AT &kp HASH &kp DLR &kp PERC                    &kp MINUS &sk LGUI &sk LALT &sk LSFT &sk LCTL 
           &kp CIRC &kp AMPR &kp BACKSLASH &kp SLASH &kp PIPE           &kp EQUAL &kp PLUS &kp ASTR &kp QUES &kp EXLM 
           &mo 4 &kp SPACE                                              &kp BACKSPACE &trans
