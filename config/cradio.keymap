@@ -41,14 +41,6 @@
           &mo 4 &kp SPACE                                               &kp BACKSPACE &trans
           >;
         };
-//  layer2 {
-//          bindings = <
-//          &kp ESCAPE &kp TILDE &kp C_VOLUME_DOWN &kp C_VOLUME_UP &kp N7                &kp PAGE_UP &kp HOME &kp UP &kp END &kp DELETE 
-//          &sk LCTL &sk LSFT &sk LALT &sk LGUI &kp F20                                   &kp TAB &kp LEFT &kp DOWN &kp RIGHT &kp ENTER 
-//          &kp CAPSLOCK &kp C_STOP &kp C_REWIND &kp C_FAST_FORWARD &kp C_PLAY_PAUSE      &kp PAGE_DOWN &trans &trans &tog 1 &tog 0 
-//          &trans &kp SPACE                                                              &kp BACKSPACE &mo 4
-//          >;
-//        };
   layer3 {
           bindings = <
           &kp ESCAPE &kp C_MUTE &kp C_VOLUME_DOWN &kp C_VOLUME_UP &kp N7                &kp PAGE_UP &kp HOME &kp UP &kp END &kp DELETE 
