@@ -67,6 +67,16 @@
             timeout-ms = <150>;
             require-prior-idle-ms = <100>;
             layers = <0>;
+            slow-release;
+        };
+
+        toIpadSC {
+            bindings = <&mo 2>;
+            key-positions = <32 30>;
+            timeout-ms = <150>;
+            slow-release;
+            require-prior-idle-ms = <100>;
+            layers = <0>;
         };
     };
 
