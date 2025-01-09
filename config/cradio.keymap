@@ -50,6 +50,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        fasdf {
+            bindings = <&caps_word>;
+            key-positions = <4 7>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -116,7 +125,7 @@
             >;
         };
 
-        layer_7 {
+        symb {
             bindings = <
 &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
