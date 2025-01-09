@@ -42,6 +42,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "TAPSK_HOLDLAYER";
             bindings = <&mo>, <&sk>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
@@ -62,7 +63,7 @@
 
         toSymb {
             bindings = <&to 7>;
-            key-positions = <31 32>;
+            key-positions = <30 33>;
             timeout-ms = <150>;
             require-prior-idle-ms = <100>;
             layers = <0>;
