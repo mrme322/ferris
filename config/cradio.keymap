@@ -63,7 +63,6 @@
 
         toSymb {
             bindings = <&to 7>;
-            key-positions = <38 39 30 33>;
             timeout-ms = <150>;
             require-prior-idle-ms = <100>;
             layers = <0>;
