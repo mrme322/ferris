@@ -62,7 +62,7 @@
         };
 
         toSymb {
-            bindings = <&mo 7>;
+            bindings = <&mo 6>;
             key-positions = <30 33>;
             timeout-ms = <150>;
             require-prior-idle-ms = <100>;
@@ -127,21 +127,21 @@
             >;
         };
 
-        adj {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans    &trans  &trans
-            >;
-        };
-
         symb {
             bindings = <
 &none  &none  &none  &none  &none    &none  &none  &none  &none  &none
 &none  &none  &none  &none  &none    &none  &none  &none  &none  &none
 &none  &none  &none  &none  &none    &none  &none  &none  &none  &none
                      &none  &none    &none  &none
+            >;
+        };
+
+        adj {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans    &trans  &trans
             >;
         };
     };
