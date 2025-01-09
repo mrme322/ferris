@@ -62,7 +62,7 @@
         };
 
         toSymb {
-            bindings = <&to 7>;
+            bindings = <&mo 7>;
             key-positions = <30 33>;
             timeout-ms = <150>;
             require-prior-idle-ms = <100>;
