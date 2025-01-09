@@ -87,6 +87,14 @@
             require-prior-idle-ms = <100>;
             layers = <0>;
         };
+        toFn {
+            bindings = <&mo 5>;
+            key-positions = <31 33>;
+            timeout-ms = <150>;
+            slow-release;
+            require-prior-idle-ms = <100>;
+            layers = <0>;
+        };
 
         escL {
             timeout-ms = <40>;
@@ -96,14 +104,7 @@
             layers = <0>;
         };
 
-        toFn {
-            bindings = <&mo 5>;
-            key-positions = <31 33>;
-            timeout-ms = <150>;
-            slow-release;
-            require-prior-idle-ms = <100>;
-            layers = <0>;
-        };
+
     };
 
     keymap {
