@@ -78,6 +78,15 @@
             require-prior-idle-ms = <100>;
             layers = <0>;
         };
+
+        toAdj {
+            bindings = <&mo 7>;
+            key-positions = <0 4>;
+            timeout-ms = <150>;
+            slow-release;
+            require-prior-idle-ms = <100>;
+            layers = <0>;
+        };
     };
 
     keymap {
