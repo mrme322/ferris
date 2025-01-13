@@ -113,6 +113,54 @@
             require-prior-idle-ms = <100>;
             layers = <0>;
         };
+
+        backL {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <16 17>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0 3 4 6 5>;
+        };
+
+        backR {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <8 13 12 9>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0 3 4 6 5>;
+        };
+
+        delR {
+            bindings = <&kp DEL>;
+            key-positions = <26 27>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0 3 4 6 5>;
+        };
+
+        delL {
+            bindings = <&kp DEL>;
+            key-positions = <23 22>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0 3 4 6 5>;
+        };
+
+        wordDelR {
+            bindings = <&kp LC(BACKSPACE)>;
+            key-positions = <17 18>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0 3 4 6 5>;
+        };
+
+        wordDelL {
+            bindings = <&kp LC(BACKSPACE)>;
+            key-positions = <12 11>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0 3 4 6 5>;
+        };
     };
 
     keymap {
@@ -174,10 +222,10 @@
 
         symb {
             bindings = <
-&kp EXCL      &kp AT    &kp HASH       &kp DLLR        &kp SQT              &kp PLUS   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp GRAVE  &kp STAR
-&kp LEFT_GUI  &kp LALT  &kp LCTRL      &kp LEFT_SHIFT  &none                &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDER  &kp SLASH
-&kp CARET     &kp AMPS  &kp BACKSLASH  &kp PERCENT     &kp DOUBLE_QUOTES    &kp PIPE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE  &kp EQUAL
-                                       &none           &none                &none      &none
+&kp EXCL      &kp AT    &kp HASH       &kp DLLR        &none    &kp PLUS   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp GRAVE  &kp STAR
+&kp LEFT_GUI  &kp LALT  &kp LCTRL      &kp LEFT_SHIFT  &none    &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDER  &kp SLASH
+&kp CARET     &kp AMPS  &kp BACKSLASH  &kp PERCENT     &none    &kp PIPE   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE  &kp EQUAL
+                                       &none           &none    &none      &none
             >;
         };
 
