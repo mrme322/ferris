@@ -97,6 +97,22 @@
             require-prior-idle-ms = <100>;
             layers = <0>;
         };
+
+        questionR {
+            bindings = <&kp QUESTION>;
+            key-positions = <27 28>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0>;
+        };
+
+        aphos {
+            bindings = <&kp SQT>;
+            key-positions = <7 8>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0>;
+        };
     };
 
     keymap {
