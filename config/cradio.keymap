@@ -1,8 +1,8 @@
-#undef ZMK_BEHAVIORS_KEEP_ALL
-
-#define ZMK_BEHAVIORS_KEEP_SK
-#define ZMK_BEHAVIORS_KEEP_MT
-#define ZMK_BEHAVIORS_KEEP_KT
+/*
+  * Copyright (c) 2020 The ZMK Contributors
+  *test
+  * SPDX-License-Identifier: MIT
+  */
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -73,7 +73,7 @@
         };
 
         toIpadSC {
-            bindings = <&mo 2>;
+            bindings = <&mo 3>;
             key-positions = <32 31>;
             timeout-ms = <150>;
             slow-release;
@@ -98,6 +98,29 @@
             layers = <0>;
         };
 
+        aphostrope {
+            timeout-ms = <35>;
+            bindings = <&kp SQT>;
+            key-positions = <8 7>;
+            layers = <0>;
+        };
+
+        backR {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <16 17>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0 5 4 6>;
+        };
+
+        backL {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <12 13>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0 5 4 6>;
+        };
+
         questionR {
             bindings = <&kp QUESTION>;
             key-positions = <27 28>;
@@ -106,44 +129,20 @@
             layers = <0>;
         };
 
-        aphos {
-            bindings = <&kp SQT>;
-            key-positions = <7 8>;
+        wordDel {
+            bindings = <&kp LC(BACKSPACE)>;
+            key-positions = <12 11>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
             layers = <0>;
         };
 
-        backL {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <16 17>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <100>;
-            layers = <0 3 4 6 5>;
-        };
-
-        backR {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <13 12>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <100>;
-            layers = <0 3 4 6 5>;
-        };
-
         delR {
-            bindings = <&kp DEL>;
+            bindings = <&kp DELETE>;
             key-positions = <26 27>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
-            layers = <0 3 4 6 5>;
-        };
-
-        delL {
-            bindings = <&kp DEL>;
-            key-positions = <23 22>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <100>;
-            layers = <0 3 4 6 5>;
+            layers = <0 5 4 6>;
         };
 
         wordDelR {
@@ -151,15 +150,23 @@
             key-positions = <17 18>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
-            layers = <0 3 4 6 5>;
+            layers = <0>;
         };
 
-        wordDelL {
-            bindings = <&kp LC(BACKSPACE)>;
-            key-positions = <12 11>;
+        delL {
+            bindings = <&kp DELETE>;
+            key-positions = <22 23>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
-            layers = <0 3 4 6 5>;
+            layers = <0 5 4 6>;
+        };
+
+        enterL {
+            bindings = <&kp ENTER>;
+            key-positions = <21 22>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0>;
         };
     };
 
@@ -171,16 +178,25 @@
 &kp Q            &kp W            &kp E                &kp R              &kp T                            &kp Y        &kp U              &kp I                &kp O            &kp P
 &hml LEFT_GUI A  &hml LEFT_ALT S  &hml LEFT_CONTROL D  &hml LEFT_SHIFT F  &kp G                            &kp H        &hmr LEFT_SHIFT J  &hmr LEFT_CONTROL K  &hmr LEFT_ALT L  &hmr LEFT_GUI SEMICOLON
 &kp Z            &kp X            &kp C                &kp V              &kp B                            &kp N        &kp M              &kp COMMA            &kp DOT          &kp FSLH
-                                                       &lt 5 TAB          &tapSk_holdLayer 1 LEFT_SHIFT    &lt 3 SPACE  &lt 4 ENTER
+                                                       &lt 1 TAB          &tapSk_holdLayer 2 LEFT_SHIFT    &lt 4 SPACE  &lt 5 ENTER
+            >;
+        };
+
+        fn {
+            bindings = <
+&sk LEFT_GUI  &kp F7  &kp F8  &kp F9  &kp F12    &none  &none           &none      &none     &none
+&kp LEFT_GUI  &kp F4  &kp F5  &kp F6  &kp F11    &none  &kp LEFT_SHIFT  &kp LCTRL  &kp LALT  &kp LEFT_GUI
+&key_repeat   &kp F1  &kp F2  &kp F3  &kp F10    &none  &sk LEFT_SHIFT  &sk LCTRL  &sk LALT  &sk LEFT_GUI
+                              &none   &none      &none  &none
             >;
         };
 
         customWinSc {
             bindings = <
-&kp LC(LG(F4))  &kp LG(TAB)    &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &kp LC(LG(D))    &none  &none  &none  &none  &none
-&kp LC(A)       &kp LC(X)      &kp LC(C)         &kp LC(V)          &kp LG(E)        &none  &none  &none  &none  &none
-&kp LC(Z)       &kp C_AC_HOME  &kp LG(LS(S))     &kp LG(D)          &kp LA(F4)       &none  &none  &none  &none  &none
-                                                 &none              &none            &none  &none
+&kp LG(LC(F4))  &kp LG(TAB)    &kp LC(LG(LEFT_ARROW))  &kp LC(LG(RIGHT))  &kp LG(LC(D))    &none  &none  &none  &none  &none
+&kp LC(A)       &kp LC(X)      &kp LC(C)               &kp LC(V)          &kp LG(E)        &none  &none  &none  &none  &none
+&kp LC(Z)       &kp C_AC_HOME  &kp LG(LS(S))           &kp LG(D)          &kp LA(F4)       &none  &none  &none  &none  &none
+                                                       &none              &none            &none  &none
             >;
         };
 
@@ -195,28 +211,19 @@
 
         num {
             bindings = <
-&none         &none     &none      &none           &none    &kp PLUS   &kp N7      &kp N8  &kp N9  &kp STAR
-&kp LEFT_GUI  &kp LALT  &kp LCTRL  &kp LEFT_SHIFT  &none    &kp MINUS  &kp N4      &kp N5  &kp N6  &kp SLASH
-&sk LEFT_GUI  &sk LALT  &sk LCTRL  &sk LEFT_SHIFT  &none    &kp N0     &kp N1      &kp N2  &kp N3  &kp EQUAL
-                                   &none           &none    &none      &kp PERIOD
+&none         &none     &none      &none           &none    &kp PLUS   &kp N7   &kp N8  &kp N9  &kp ASTERISK
+&kp LEFT_GUI  &kp LALT  &kp LCTRL  &kp LSHFT       &none    &kp MINUS  &kp N4   &kp N5  &kp N6  &kp SLASH
+&sk LEFT_GUI  &sk LALT  &sk LCTRL  &sk LEFT_SHIFT  &none    &kp N0     &kp N1   &kp N2  &kp N3  &kp EQUAL
+                                   &none           &none    &none      &kp DOT
             >;
         };
 
         nav-media {
             bindings = <
 &none         &none     &none      &none           &none    &kp C_VOL_UP  &kp PG_UP   &kp UP      &kp PG_DN   &kp C_MUTE
-&kp LEFT_GUI  &kp LALT  &kp LCTRL  &kp LEFT_SHIFT  &none    &kp HOME      &kp LEFT    &kp DOWN    &kp RIGHT   &kp END
+&kp LEFT_GUI  &kp LALT  &kp LCTRL  &kp LSHFT       &none    &kp HOME      &kp LEFT    &kp DOWN    &kp RIGHT   &kp END
 &sk LEFT_GUI  &sk LALT  &sk LCTRL  &sk LEFT_SHIFT  &none    &kp C_VOL_DN  &kp C_PREV  &kp C_PLAY  &kp C_NEXT  &kp CAPS
                                    &none           &none    &none         &none
-            >;
-        };
-
-        fn {
-            bindings = <
-&sk LEFT_GUI  &kp F1  &kp F2  &kp F3  &kp F10    &none  &none           &none      &none     &none
-&kp LEFT_GUI  &kp F4  &kp F5  &kp F6  &kp F11    &none  &kp LEFT_SHIFT  &kp LCTRL  &kp LALT  &kp LEFT_GUI
-&key_repeat   &kp F7  &kp F8  &kp F9  &kp F12    &none  &sk LEFT_SHIFT  &sk LCTRL  &sk LALT  &sk LEFT_GUI
-                              &none   &none      &none  &none
             >;
         };
 
@@ -231,10 +238,10 @@
 
         adj {
             bindings = <
-&none  &none  &none  &none  &none          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4
-&none  &none  &none  &none  &none          &none         &kp C_BRI_UP  &kp C_BRI_DEC  &none         &bt BT_CLR
-&none  &none  &none  &none  &none          &none         &none         &none          &none         &none
-                     &none  &bootloader    &bootloader   &out OUT_TOG
+&none  &none  &none  &none       &none          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4
+&none  &none  &none  &none       &none          &none         &kp C_BRI_UP  &kp C_BRI_DEC  &none         &bt BT_CLR
+&none  &none  &none  &none       &none          &none         &none         &none          &none         &out OUT_TOG
+                     &sys_reset  &bootloader    &bootloader   &sys_reset
             >;
         };
     };
