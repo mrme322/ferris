@@ -9,6 +9,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
+&sk { quick-release; };
+
 / {
     behaviors {
         hmr: hmr {
@@ -48,7 +50,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
-            retro-tap;
         };
     };
 
@@ -168,6 +169,37 @@
             require-prior-idle-ms = <100>;
             layers = <0>;
         };
+
+        Sleep {
+            bindings = <&kp K_SLEEP>;
+            key-positions = <11 12 13 10 31>;
+            timeout-ms = <150>;
+            require-prior-idle-ms = <40>;
+            layers = <0>;
+        };
+
+        menu {
+            bindings = <&kp CAPS>;
+            key-positions = <28 29>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0>;
+        };
+    };
+
+    macros {
+        sleep: sleep {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LG(X)>,
+                <&macro_wait_time 120>,
+                <&kp U>,
+                <&macro_wait_time 120>,
+                <&kp S>;
+
+            label = "SLEEP";
+        };
     };
 
     keymap {
@@ -184,7 +216,7 @@
 
         fn {
             bindings = <
-&sk LEFT_GUI  &kp F7  &kp F8  &kp F9  &kp F12    &none  &none           &none      &none     &none
+&sk PAGE_UP   &kp F7  &kp F8  &kp F9  &kp F12    &none  &none           &none      &none     &none
 &kp LEFT_GUI  &kp F4  &kp F5  &kp F6  &kp F11    &none  &kp LEFT_SHIFT  &kp LCTRL  &kp LALT  &kp LEFT_GUI
 &key_repeat   &kp F1  &kp F2  &kp F3  &kp F10    &none  &sk LEFT_SHIFT  &sk LCTRL  &sk LALT  &sk LEFT_GUI
                               &none   &none      &none  &none
@@ -222,7 +254,7 @@
             bindings = <
 &none         &none     &none      &none           &none    &kp C_VOL_UP  &kp PG_UP   &kp UP      &kp PG_DN   &kp C_MUTE
 &kp LEFT_GUI  &kp LALT  &kp LCTRL  &kp LSHFT       &none    &kp HOME      &kp LEFT    &kp DOWN    &kp RIGHT   &kp END
-&sk LEFT_GUI  &sk LALT  &sk LCTRL  &sk LEFT_SHIFT  &none    &kp C_VOL_DN  &kp C_PREV  &kp C_PLAY  &kp C_NEXT  &kp CAPS
+&sk LEFT_GUI  &sk LALT  &sk LCTRL  &sk LEFT_SHIFT  &none    &kp C_VOL_DN  &kp C_PREV  &kp C_PLAY  &kp C_NEXT  &kp K_CMENU
                                    &none           &none    &none         &none
             >;
         };
@@ -238,10 +270,10 @@
 
         adj {
             bindings = <
-&none  &none  &none  &none  &none          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4
-&none  &none  &none  &none  &none          &none         &kp C_BRI_UP  &kp C_BRI_DEC  &none         &bt BT_CLR
-&none  &none  &none  &none  &none          &none         &none         &none          &none         &out OUT_TOG
-                     &none  &bootloader    &bootloader   &none
+&none  &none  &none  &none       &none          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4
+&none  &none  &none  &none       &none          &none         &kp C_BRI_UP  &kp C_BRI_DEC  &none         &bt BT_CLR
+&none  &none  &none  &none       &none          &none         &none         &none          &none         &out OUT_TOG
+                     &sys_reset  &bootloader    &bootloader   &sys_reset
             >;
         };
     };
