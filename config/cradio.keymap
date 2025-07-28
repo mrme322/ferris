@@ -5,7 +5,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/pointing.h>
 
 &sk { quick-release; };
 
@@ -236,10 +235,10 @@
 
         fn {
             bindings = <
-&sk HOME     &kp F7  &kp F8  &kp F9  &kp F12    &none            &none           &none      &none     &none
-&key_repeat  &kp F4  &kp F5  &kp F6  &kp F11    &kp PRINTSCREEN  &kp LEFT_SHIFT  &kp LCTRL  &kp LALT  &kp LEFT_GUI
-&none        &kp F1  &kp F2  &kp F3  &kp F10    &kp CAPS         &sk LEFT_SHIFT  &sk LCTRL  &sk LALT  &sk LEFT_GUI
-                             &none   &none      &none            &none
+&sk HOME       &kp F7  &kp F8  &kp F9  &kp F12    &none            &none           &none      &none     &none
+&kp LS(LC(H))  &kp F4  &kp F5  &kp F6  &kp F11    &kp PRINTSCREEN  &kp LEFT_SHIFT  &kp LCTRL  &kp LALT  &kp LEFT_GUI
+&key_repeat    &kp F1  &kp F2  &kp F3  &kp F10    &kp CAPS         &sk LEFT_SHIFT  &sk LCTRL  &sk LALT  &sk LEFT_GUI
+                               &none   &none      &none            &none
             >;
         };
 
@@ -291,18 +290,9 @@
         custom {
             bindings = <
 &none          &none  &none  &none  &none    &none  &none  &none  &none  &none
-&kp LS(LC(H))  &none  &none  &to 9  &none    &none  &none  &none  &none  &none
+&kp LS(LC(H))  &none  &none  &none  &none    &none  &none  &none  &none  &none
 &none          &none  &none  &none  &none    &none  &none  &none  &none  &none
                              &none  &none    &none  &none
-            >;
-        };
-
-        mouse-jwHightlight {
-            bindings = <
-&none  &none     &none     &none     &none       &none  &none  &none  &none  &none
-&none  &kp F3    &kp F2    &kp F1    &none       &none  &none  &none  &none  &none
-&none  &mkp MB2  &mkp MB3  &mkp MB1  &none       &none  &none  &none  &none  &none
-                           &mkp MB2  &mkp MB1    &none  &none
             >;
         };
     };
