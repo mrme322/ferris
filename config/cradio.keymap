@@ -69,7 +69,7 @@
             key-positions = <13 16>;
             timeout-ms = <150>;
             require-prior-idle-ms = <100>;
-            layers = <1>;
+            layers = <0>;
         };
 
         toSymb {
@@ -77,7 +77,7 @@
             key-positions = <30 33>;
             timeout-ms = <150>;
             require-prior-idle-ms = <100>;
-            layers = <1>;
+            layers = <0>;
             slow-release;
         };
 
@@ -87,7 +87,7 @@
             timeout-ms = <150>;
             slow-release;
             require-prior-idle-ms = <100>;
-            layers = <1>;
+            layers = <0>;
         };
 
         toAdj {
@@ -103,14 +103,14 @@
             bindings = <&kp ESCAPE>;
             key-positions = <3 2>;
             require-prior-idle-ms = <100>;
-            layers = <1>;
+            layers = <0>;
         };
 
         aphostrope {
             timeout-ms = <35>;
             bindings = <&kp SQT>;
             key-positions = <8 7>;
-            layers = <1>;
+            layers = <0>;
         };
 
         backR {
@@ -118,7 +118,7 @@
             key-positions = <16 17>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
-            layers = <1 6 5 7>;
+            layers = <0 6 5 7>;
         };
 
         backL {
@@ -126,7 +126,7 @@
             key-positions = <12 13>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
-            layers = <1 6 5 7>;
+            layers = <0 6 5 7>;
         };
 
         questionR {
@@ -134,7 +134,7 @@
             key-positions = <27 28>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
-            layers = <1>;
+            layers = <0>;
         };
 
         wordDel {
@@ -142,7 +142,7 @@
             key-positions = <12 11>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
-            layers = <1>;
+            layers = <0>;
         };
 
         delR {
@@ -150,7 +150,7 @@
             key-positions = <26 27>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
-            layers = <1 6 5 7>;
+            layers = <0 6 5 7>;
         };
 
         wordDelR {
@@ -158,7 +158,7 @@
             key-positions = <17 18>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
-            layers = <1>;
+            layers = <0>;
         };
 
         delL {
@@ -166,7 +166,7 @@
             key-positions = <22 23>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
-            layers = <1 6 5 7>;
+            layers = <0 6 5 7>;
         };
 
         enterL {
@@ -174,7 +174,7 @@
             key-positions = <21 22>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
-            layers = <1>;
+            layers = <0>;
         };
 
         Sleep {
@@ -182,7 +182,7 @@
             key-positions = <11 12 13 10 31>;
             timeout-ms = <150>;
             require-prior-idle-ms = <40>;
-            layers = <1>;
+            layers = <0>;
         };
 
         menu {
@@ -190,11 +190,11 @@
             key-positions = <28 29>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
-            layers = <1>;
+            layers = <0>;
         };
 
         disableHMR {
-            bindings = <&tog 8>;
+            bindings = <&tog 0>;
             key-positions = <20 24>;
             timeout-ms = <150>;
             slow-release;
@@ -205,21 +205,21 @@
     keymap {
         compatible = "zmk,keymap";
 
-        L0noHMR {
-            bindings = <
-&kp Q  &kp W  &kp E  &kp R      &kp T      &kp Y        &kp U        &kp I      &kp O    &kp P
-&kp A  &kp S  &kp D  &kp F      &kp G      &kp H        &kp J        &kp K      &kp L    &kp SEMI
-&kp Z  &kp X  &kp C  &kp V      &kp B      &kp N        &kp M        &kp COMMA  &kp DOT  &kp FSLH
-                     &lt 3 TAB  &LTHUMB    &lt 5 SPACE  &lt 6 ENTER
-            >;
-        };
-
         L0 {
             bindings = <
 &kp Q            &kp W            &kp E                &kp R              &kp T      &kp Y        &kp U              &kp I                &kp O            &kp P
 &hml LEFT_GUI A  &hml LEFT_ALT S  &hml LEFT_CONTROL D  &hml LEFT_SHIFT F  &kp G      &kp H        &hmr LEFT_SHIFT J  &hmr LEFT_CONTROL K  &hmr LEFT_ALT L  &hmr LEFT_GUI SEMICOLON
 &kp Z            &kp X            &kp C                &kp V              &kp B      &kp N        &kp M              &kp COMMA            &kp DOT          &kp FSLH
                                                        &lt 3 TAB          &LTHUMB    &lt 5 SPACE  &lt 6 ENTER
+            >;
+        };
+
+        L0noHMR {
+            bindings = <
+&kp Q  &kp W  &kp E  &kp R      &kp T      &kp Y        &kp U        &kp I      &kp O    &kp P
+&kp A  &kp S  &kp D  &kp F      &kp G      &kp H        &kp J        &kp K      &kp L    &kp SEMI
+&kp Z  &kp X  &kp C  &kp V      &kp B      &kp N        &kp M        &kp COMMA  &kp DOT  &kp FSLH
+                     &lt 3 TAB  &LTHUMB    &lt 5 SPACE  &lt 6 ENTER
             >;
         };
 
