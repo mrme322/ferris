@@ -55,10 +55,9 @@
             bindings = <&mo>, <&sk>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <280>;
+            tapping-term-ms = <80>;
             flavor = "balanced";
             hold-while-undecided;
-            retro-tap;
         };
 
         LTHUMB: LTHUMB {
@@ -79,7 +78,6 @@
             key-positions = <13 16>;
             timeout-ms = <150>;
             require-prior-idle-ms = <100>;
-            layers = <0>;
         };
 
         toSymb {
@@ -87,17 +85,7 @@
             key-positions = <30 33>;
             timeout-ms = <150>;
             require-prior-idle-ms = <100>;
-            layers = <0>;
             slow-release;
-        };
-
-        toIpadSC {
-            bindings = <&mo 3>;
-            key-positions = <32 31>;
-            timeout-ms = <150>;
-            slow-release;
-            require-prior-idle-ms = <100>;
-            layers = <0>;
         };
 
         toAdj {
@@ -142,7 +130,7 @@
         questionR {
             bindings = <&kp QUESTION>;
             key-positions = <27 28>;
-            timeout-ms = <40>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <100>;
             layers = <0>;
         };
@@ -201,6 +189,39 @@
             timeout-ms = <40>;
             slow-release;
             require-prior-idle-ms = <100>;
+        };
+
+        toIpad {
+            bindings = <&mo 3>;
+            key-positions = <31 32>;
+            timeout-ms = <150>;
+            slow-release;
+            require-prior-idle-ms = <100>;
+        };
+
+        toMouse {
+            bindings = <&to 9>;
+            key-positions = <11 12 13>;
+            timeout-ms = <150>;
+            slow-release;
+            require-prior-idle-ms = <100>;
+        };
+
+        moMouse {
+            bindings = <&mo 9>;
+            key-positions = <11 12 13 31>;
+            timeout-ms = <150>;
+            slow-release;
+            require-prior-idle-ms = <100>;
+        };
+    };
+
+    macros {
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "NEW_MACRO";
         };
     };
 
@@ -290,10 +311,10 @@
 
         mouse {
             bindings = <
-&none  &kp F1    &kp F2    &kp F3    &none    &none  &none  &none  &none  &none
-&none  &mkp MB2  &mkp MB3  &mkp MB1  &none    &none  &none  &none  &none  &none
-&none  &mkp MB4  &mkp MB5  &none     &none    &none  &none  &none  &none  &none
-                           &none     &none    &none  &none
+&none             &none     &none     &none     &none     &none  &none  &none  &none  &none
+&kp LEFT_SHIFT    &mkp MB2  &mkp MB3  &mkp MB1  &kp F6    &none  &none  &none  &none  &none
+&kp LEFT_CONTROL  &none     &none     &none     &none     &none  &none  &none  &none  &none
+                                      &none     &to 0     &none  &none
             >;
         };
     };
