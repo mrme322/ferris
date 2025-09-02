@@ -193,7 +193,7 @@
 
         toAdj {
             bindings = <&mo 7>;
-            key-positions = <11 12 13 31 10>;
+            key-positions = <11 12 13 31 20>;
             timeout-ms = <150>;
             slow-release;
             require-prior-idle-ms = <100>;
@@ -303,10 +303,10 @@
 
         leftNav-Media {
             bindings = <
-&kp C_MUTE      &kp HOME    &kp UP      &kp END     &kp C_VOLUME_UP    &none  &none  &none  &none  &none
-&kp LC(TAB)     &kp LEFT    &kp DOWN    &kp RIGHT   &kp LS(LC(TAB))    &none  &none  &none  &none  &none
-&kp LEFT_SHIFT  &kp C_PREV  &kp C_PLAY  &kp C_NEXT  &kp C_VOL_DN       &none  &none  &none  &none  &none
-                                        &none       &none              &none  &none
+&kp C_MUTE       &kp HOME    &kp UP      &kp END     &kp C_VOLUME_UP    &none  &none  &none  &none  &none
+&kp LC(LS(TAB))  &kp LEFT    &kp DOWN    &kp RIGHT   &kp LC(TAB)        &none  &none  &none  &none  &none
+&kp LEFT_SHIFT   &kp C_PREV  &kp C_PLAY  &kp C_NEXT  &kp C_VOL_DN       &none  &none  &none  &none  &none
+                                         &none       &none              &none  &none
             >;
         };
     };
