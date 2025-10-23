@@ -64,7 +64,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "LTHUMB";
             #binding-cells = <0>;
-            bindings = <&tapSk_holdLayer 1 LEFT_SHIFT>, <&lt 5 LEFT_WIN>;
+            bindings = <&tapSk_holdLayer 1 LEFT_SHIFT>, <&kp LEFT_WIN>;
 
             tapping-term-ms = <380>;
         };
@@ -82,7 +82,7 @@
 
         toSymb {
             bindings = <&mo 5>;
-            key-positions = <30 33>;
+            key-positions = <31 32>;
             timeout-ms = <150>;
             require-prior-idle-ms = <100>;
             slow-release;
@@ -157,16 +157,16 @@
             require-prior-idle-ms = <100>;
         };
 
-        LhandOHM {
-            bindings = <&mo 7>;
+        fn {
+            bindings = <&mo 2>;
             key-positions = <13 31>;
             timeout-ms = <40>;
             slow-release;
             require-prior-idle-ms = <100>;
         };
 
-        RhandOHM {
-            bindings = <&mo 7>;
+        nav-media {
+            bindings = <&mo 4>;
             key-positions = <16 32>;
             timeout-ms = <40>;
             slow-release;
@@ -203,6 +203,14 @@
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
         };
+
+        alt {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <11 12 13>;
+            timeout-ms = <150>;
+            slow-release;
+            require-prior-idle-ms = <100>;
+        };
     };
 
     keymap {
@@ -210,10 +218,10 @@
 
         L0 {
             bindings = <
-&kp Q            &kp W            &kp E                &kp R              &kp T      &kp Y        &kp U              &kp I                &kp O            &kp P
-&hml LEFT_WIN A  &hml LEFT_ALT S  &hml LEFT_CONTROL D  &hml LEFT_SHIFT F  &kp G      &kp H        &hmr LEFT_SHIFT J  &hmr LEFT_CONTROL K  &hmr LEFT_ALT L  &hmr LEFT_WIN SEMICOLON
-&kp Z            &kp X            &kp C                &kp V              &kp B      &kp N        &kp M              &kp COMMA            &kp DOT          &kp FSLH
-                                                       &lt 2 TAB          &LTHUMB    &lt 3 SPACE  &lt 4 ENTER
+&kp Q  &kp W  &kp E  &kp R      &kp T      &kp Y        &kp U        &kp I      &kp O    &kp P
+&kp A  &kp S  &kp D  &kp F      &kp G      &kp H        &kp J        &kp K      &kp L    &kp SEMI
+&kp Z  &kp X  &kp C  &kp V      &kp B      &kp N        &kp M        &kp COMMA  &kp DOT  &kp FSLH
+                     &lt 7 TAB  &LTHUMB    &lt 3 SPACE  &lt 7 ENTER
             >;
         };
 
@@ -249,7 +257,7 @@
 &none         &none     &none      &none           &none    &kp C_VOL_UP  &kp PG_UP   &kp UP      &kp PG_DN   &kp C_MUTE
 &sk LEFT_GUI  &sk LALT  &sk LCTRL  &sk LSHFT       &none    &kp HOME      &kp LEFT    &kp DOWN    &kp RIGHT   &kp END
 &kp LEFT_GUI  &kp LALT  &kp LCTRL  &kp LEFT_SHIFT  &none    &kp C_VOL_DN  &kp C_PREV  &kp C_PLAY  &kp C_NEXT  &kp K_CMENU
-                                   &none           &none    &none         &none
+                                   &none           &none    &none         &kp ENTER
             >;
         };
 
@@ -264,19 +272,19 @@
 
         adj {
             bindings = <
-&none  &none  &none  &none       &none          &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2          &bt BT_SEL 3  &bt BT_SEL 4
-&none  &none  &none  &none       &none          &none         &kp C_BRI_INC  &kp C_BRIGHTNESS_DEC  &none         &none
-&none  &none  &none  &none       &none          &none         &none          &none                 &none         &out OUT_TOG
-                     &bt BT_CLR  &bootloader    &bootloader   &none
+&none  &none  &none  &none  &none          &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2          &bt BT_SEL 3  &bt BT_SEL 4
+&none  &none  &none  &none  &none          &none         &kp C_BRI_INC  &kp C_BRIGHTNESS_DEC  &none         &bt BT_CLR
+&none  &none  &none  &none  &none          &none         &none          &none                 &none         &out OUT_TOG
+                     &none  &bootloader    &bootloader   &none
             >;
         };
 
         oneHandMods {
             bindings = <
-&none         &none     &none      &none      &none    &none  &none      &none      &none     &none
-&sk LEFT_WIN  &sk LALT  &sk LCTRL  &sk LSHFT  &none    &none  &sk LSHFT  &sk LCTRL  &sk LALT  &sk LEFT_WIN
-&kp LEFT_WIN  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LEFT_WIN
-                                   &none      &none    &none  &none
+&key_repeat   &kp ESC   &kp LC(BSPC)  &kp BSPC   &kp ENTER    &kp QUESTION  &kp BSPC   &kp LC(BSPC)  &kp ESC   &kp APOSTROPHE
+&sk LEFT_WIN  &sk LALT  &sk LCTRL     &sk LSHFT  &kp DEL      &kp DEL       &sk LSHFT  &sk LCTRL     &sk LALT  &sk LEFT_WIN
+&kp LEFT_WIN  &kp LALT  &kp LCTRL     &kp LSHFT  &none        &none         &kp LSHFT  &kp LCTRL     &kp LALT  &kp LEFT_WIN
+                                      &none      &none        &none         &none
             >;
         };
 
